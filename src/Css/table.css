@@ -255,10 +255,27 @@
   .tablet-list .list-header {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr 60px;
-    gap: 8px;
+  /* slightly smaller gap to bring columns closer */
+  gap: 6px;
     background: transparent;
-    padding: 16px 20px;
+  /* reduce left/right padding so headers sit closer to their fields */
+  padding: 16px 4px;
     border-bottom: none;
+  }
+
+  /* Ensure consistent left alignment for all header cells and row fields on tablet */
+  /* Remove global left padding which created a visible gap; instead add small left padding to the first header-cell and first field */
+  .tablet-list .list-header,
+  .tablet-list .product-item.tablet-row {
+    box-sizing: border-box;
+  }
+
+  /* Shift only the first header and first column contents slightly so labels and inputs line up without a big left gap */
+  /* align first header exactly with the first column content */
+  .tablet-list .list-header .header-cell:first-child,
+  .tablet-list .product-item.tablet-row .tablet-field:first-child {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
   }
 
   .tablet-list .header-cell {
@@ -268,7 +285,8 @@
     text-transform: capitalize;
     letter-spacing: 0.5px;
     text-align: left;
-    padding-left: 12px !important;
+  /* small internal padding so text doesn't touch the edge */
+  padding-left: 2px !important;
   }
 
   .tablet-list .product-list {
@@ -277,8 +295,9 @@
 
   .tablet-list .product-item.tablet-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 5px;
-    gap: 12px;
+    /* match header columns exactly so labels and inputs align */
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 60px;
+  gap: 6px;
     margin-bottom: 6px;
     align-items: center;
   }
@@ -368,9 +387,10 @@
   .laptop-list .list-header {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 2fr 60px;
-    gap: 12px;
+    gap: 8px;
     background: transparent;
-    padding: 16px 20px;
+    /* reduce left/right padding to bring headers closer to inputs */
+    padding: 16px 8px;
     border-bottom: none;
   }
 
@@ -381,7 +401,7 @@
     text-transform: capitalize;
     letter-spacing: 0.5px;
     text-align: left;
-    padding-left: 12px !important;
+    padding-left: 6px !important;
   }
 
   .laptop-list .product-list {
@@ -390,10 +410,24 @@
 
   .laptop-list .product-item.laptop-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 2fr 1px;
-    gap: 16px;
+    /* match header columns exactly so labels and inputs align */
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 2fr 60px;
+    gap: 8px;
     margin-bottom: 6px;
     align-items: center;
+  }
+
+  /* Ensure consistent left alignment for all header cells and row fields on laptop/desktop */
+  /* Avoid large container left padding; align first header/column instead */
+  .laptop-list .list-header,
+  .laptop-list .product-item.laptop-row {
+    box-sizing: border-box;
+  }
+
+  .laptop-list .list-header .header-cell:first-child,
+  .laptop-list .product-item.laptop-row .laptop-field:first-child {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
   }
 
   .laptop-list .laptop-field {
