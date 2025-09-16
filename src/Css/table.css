@@ -121,11 +121,12 @@
   font-weight: 400;
 }
 
+/* Three dots menu button */
 .more-options {
   background: none;
   border: none;
-  padding: 4px;
-  margin-left: 8px;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
   color: #6c757d;
   display: flex;
@@ -133,6 +134,35 @@
   justify-content: center;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  min-width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+
+/* Tablet and above - Compact three dots menu */
+@media (min-width: 768px) {
+  /* Apply to both tablet and laptop layouts */
+  .tablet-field.actions-field,
+  .laptop-list .tablet-field.actions-field,
+  .laptop-field.actions-field {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    width: 24px;
+    box-sizing: border-box;
+  }
+
+  .tablet-field.actions-field .more-options,
+  .laptop-list .tablet-field.actions-field .more-options,
+  .laptop-field.actions-field .more-options {
+    margin: 0;
+    padding: 0;
+    min-width: 24px;
+    width: 24px;
+  }
 }
 
 .more-options svg {
@@ -348,7 +378,8 @@
   .tablet-list .more-options {
     background: none;
     border: none;
-    padding: 1px;
+    padding: 0;
+    margin: 0;
     cursor: pointer;
     color: #0285f7;
     display: flex;
@@ -356,6 +387,9 @@
     justify-content: center;
     border-radius: 4px;
     transition: background-color 0.2s ease;
+    min-width: 24px;
+    height: 24px;
+    box-sizing: border-box;
   }
 
   .tablet-list .more-options svg {
