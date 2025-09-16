@@ -1,0 +1,824 @@
+/* Mobile-specific styles matching the image design */
+
+/* Search Section */
+.mobile-search-section {
+  margin-bottom: 20px;
+  margin-left: 6px;   /* Adds space to the left of the element */
+  margin-right: 6px; 
+}
+
+.search-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 16px;
+  border: 1px solid #e1e5e9;
+  border-radius: 20px;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #0285f7;
+  box-shadow: 0 0 0 3px rgba(2, 133, 247, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #0285f7;
+  pointer-events: none;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.action-btn-container {
+  background: #fff;
+  border-radius: 30px;
+  padding: 0px 29px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.action-btn-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Blue outline for screens above 380px */
+@media (min-width: 381px) {
+  .action-btn-container:hover {
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(2, 133, 247, 0.2);
+  }
+  
+  .product-input:focus, .price-input:focus, .search-input:focus {
+    box-shadow: 0 0 0 3px rgba(2, 133, 247, 0.15);
+  }
+}
+
+/* Decrease width slightly for screens above 360px */
+@media (min-width: 361px) {
+  .action-btn-container {
+    padding: 0px 27px; /* Decreased from 29px to 25px for narrower containers */
+  }
+}
+
+/* Increase width for screens above 390px */
+@media (min-width: 391px) {
+  .action-btn-container {
+    padding: 0px 32px; /* Increased from 25px to 32px for wider containers */
+  }
+}
+
+/* Increase width for screens above 425px */
+@media (min-width: 426px) {
+  .action-btn-container {
+    padding: 0px 36px; /* Increased from 29px to 36px for more width */
+  }
+}
+
+/* Mobile landscape - position action buttons: left, middle, right */
+@media (orientation: landscape) and (max-width: 767px) {
+  .action-buttons {
+    justify-content: space-between;
+    gap: 0;
+    padding: 0 16px;
+  }
+  
+  .action-btn-container:nth-child(1) {
+    /* First button - move more to the left */
+    margin-left: -12px;
+  }
+  
+  .action-btn-container:nth-child(2) {
+    /* Second button - center */
+    margin: 0 auto;
+  }
+  
+  .action-btn-container:nth-child(3) {
+    /* Third button - move more to the right */
+    margin-right: -12px;
+  }
+  
+  .action-btn-container {
+    flex: 0 0 auto;
+    max-width: 100px;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Center the icons within each container */
+  .action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .action-icon,
+  .action-icon-img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Small tablets and large phones (481px - 640px) */
+@media (min-width: 460px) and (max-width: 640px) {
+  .action-buttons {
+    gap: 20px;
+  }
+  
+  .action-btn-container {
+    padding: 0px 32px;
+  }
+  
+  .product-info {
+    gap: 12px;
+  }
+  
+  .header-cell {
+    font-size: 13px;
+  }
+  
+  .product-input, .price-input {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+}
+
+/* Tablets (641px - 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+  .action-buttons {
+    gap: 24px;
+    justify-content: flex-start;
+  }
+  
+  .action-btn-container {
+    padding: 0px 36px;
+  }
+  
+  .product-info {
+    gap: 16px;
+  }
+  
+  .header-cell {
+    font-size: 13px;
+  }
+  
+  .product-input, .price-input {
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+   .header-cell {
+    font-size: 13px;
+  }
+  
+  .list-header {
+    padding: 20px 24px;
+  }
+  
+  .product-list {
+    padding: 12px 24px 24px 24px;
+  }
+}
+
+/* Small desktops (769px - 999px) */
+@media (min-width: 769px) and (max-width: 999px) {
+  .action-buttons {
+    gap: 28px;
+  }
+  
+  .action-btn-container {
+    padding: 0px 40px;
+  }
+  
+  .product-info {
+    gap: 20px;
+  }
+  
+  .product-item {
+    margin-bottom: 6px;
+  }
+  
+  .header-cell {
+    font-size: 13px;
+  }
+  
+  .product-input, .price-input {
+    font-size: 17px;
+    padding: 12px 16px;
+  }
+  
+  .content-area {
+    padding: 32px 40px;
+  }
+}
+
+/* Large desktops (1000px - 1200px) */
+@media (min-width: 1000px) and (max-width: 1200px) {
+  .action-buttons {
+    gap: 32px;
+  }
+  
+  .action-btn-container {
+    padding: 0px 44px;
+  }
+  
+  .product-info {
+    gap: 24px;
+  }
+  
+  .product-item {
+    margin-bottom: 6px;
+  }
+  
+  .header-cell {
+    font-size: 13px;
+  }
+  
+  .product-input, .price-input {
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+  
+  .content-area {
+    padding: 40px 48px;
+  }
+}
+
+/* Extra large screens (1201px+) */
+@media (min-width: 1201px) {
+  .action-buttons {
+    gap: 36px;
+  }
+  
+  .action-btn-container {
+    padding: 0px 48px;
+  }
+  
+  .product-info {
+    gap: 28px;
+  }
+  
+  .header-cell {
+    font-size: 13px;
+  }
+  
+  .product-input, .price-input {
+    font-size: 19px;
+    padding: 16px 20px;
+  }
+  
+  .content-area {
+    padding: 48px 56px;
+  }
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-btn {
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: relative;
+  border: none;
+}
+
+.add-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: #00E676;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.add-btn:hover::before {
+  background: #00D166;
+}
+
+.print-btn, .toggle-btn {
+  background: transparent;
+}
+
+.print-btn:hover, .toggle-btn:hover {
+  background: transparent;
+}
+
+.action-icon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+.add-btn .action-icon {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  stroke-width: 2.5;
+  width: 16px;
+  height: 16px;
+}
+
+.action-icon-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.print-btn .action-icon {
+  color: #0285f7;
+}
+
+.toggle-btn .action-icon {
+  color: #00BFFF;
+}
+
+/* Product List */
+.mobile-product-list {
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+}
+
+/* REMOVED - Tablets now use same 2-column layout as mobile portrait */
+
+.list-header {
+  display: flex;
+  background: transparent;
+  padding: 12px 20px 8px 20px;
+  border-bottom: none;
+}
+
+.header-cell {
+  flex: 1;
+  font-weight: 800;
+  font-size: 36px;
+  color: #1a1a1a;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.header-cell:first-child {
+  flex: 2;
+}
+
+.header-cell:last-child {
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 32px; /* Account for the more options button space */
+}
+
+.product-list {
+  padding: 4px 16px 16px 16px;
+}
+
+.product-item {
+  margin-bottom: 12px;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.product-name {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+
+.product-input {
+  width: 100%;
+  border: 1px solid #0285f7;
+  background: #f8f9fa;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  padding: 6px 12px;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  min-width: 0;
+}
+
+.product-input:focus {
+  border-color: #0285f7;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(2, 133, 247, 0.1);
+}
+
+.product-input::placeholder {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.product-price {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.price-input {
+  border: 1px solid #0285f7;
+  background: #f8f9fa;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  padding: 6px 12px;
+  text-align: center;
+  flex: 1;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  margin-right: 0px;
+  min-width: 0;
+}
+
+.price-input:focus {
+  border-color: #0285f7;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(2, 133, 247, 0.1);
+}
+
+.price-input::placeholder {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.more-options {
+  background: none;
+  border: none;
+  padding: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #0285f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.more-options svg {
+  width: 16px;
+  height: 16px;
+}
+
+.more-options:hover {
+  background: rgba(0, 230, 118, 0.1);
+}
+
+/* Hide page title for mobile */
+.page-title.only-price-list {
+  display: none;
+}
+
+/* Small mobile screens */
+@media (max-width: 360px) {
+  .product-info {
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+  }
+  
+  .product-name {
+    flex: 1.5;
+    min-width: 0;
+  }
+  
+  .product-price {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .product-input, .price-input {
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+  
+  .list-header {
+    padding: 8px 10px;
+  }
+  
+  .header-cell {
+    font-size: 28px;
+  }
+  
+  .action-buttons {
+    gap: 12px;
+  }
+  
+  .action-btn-container {
+    padding: 0px 20px;
+  }
+  
+  .product-list {
+    padding: 6px;
+  }
+  
+  .product-item {
+    margin-bottom: 6px;
+  }
+  
+  .more-options {
+    padding: 1px;
+  }
+  
+  .more-options svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  .product-info {
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+  }
+  
+  .product-name {
+    flex: 1.5;
+    min-width: 0;
+  }
+  
+  .product-price {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .product-input, .price-input {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  
+  .list-header {
+    padding: 10px 12px;
+  }
+  
+  .header-cell {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  
+  .product-list {
+    padding: 8px;
+  }
+  
+  .product-item {
+    margin-bottom: 8px;
+  }
+  
+  .more-options {
+    padding: 2px;
+  }
+  
+  .more-options svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .content-area {
+    padding: 24px 32px;
+  }
+
+  .search-inputs {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .search-input {
+    flex: 1;
+  }
+
+  .action-buttons {
+    justify-content: flex-start;
+  }
+
+  .page-title.only-price-list {
+    display: block;
+  }
+}
+
+/* Tablet specific search styling */
+@media (min-width: 768px) and (max-width: 999px) {
+  .mobile-search-section {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding: 0 16px 0 0; /* Move search further left, actions further right */
+  }
+
+  .search-inputs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-right: 40px; /* Increased gap even more between search and actions */
+    margin-left: -8px; /* Move search inputs further left */
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    flex: 1;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e1e5e9;
+    border-radius: 20px;
+    font-size: 14px;
+    background: #fff;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .search-input:focus {
+    background: #fff;
+    border-color: #0285f7;
+    box-shadow: 0 0 0 3px rgba(2, 133, 247, 0.10);
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: #0285f7;
+    pointer-events: none;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-right: -8px; /* Move action buttons further right */
+  }
+
+  .action-btn-container {
+    background: #fff;
+    border-radius: 30px;
+    padding: 0px 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+
+  .action-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .action-btn-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .page-title.only-price-list {
+    display: none;
+  }
+
+  .product-table-wrapper {
+    display: none;
+  }
+}
+
+
+
+/* Strong override: enforce smaller header for widths >= 480px to fix cascade issues */
+@media (min-width: 480px) {
+  /* More specific selector and !important to ensure this takes precedence */
+  .mobile-product-list .list-header .header-cell {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #1a1a1a !important;
+    line-height: 1.1 !important;
+  }
+
+  .product-info {
+    flex-direction: row !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+
+  .product-name {
+    flex: 1.5 !important;
+    min-width: 0 !important;
+  }
+
+  .product-price {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .product-input, .price-input {
+    font-size: 11px !important;
+    padding: 5px 6px !important;
+  }
+
+  .list-header {
+    padding: 8px 10px !important;
+  }
+
+  .header-cell {
+    font-size: 28px !important;
+  }
+
+  .action-buttons {
+    gap: 12px !important;
+  }
+
+
+  .product-list {
+    padding: 6px !important;
+  }
+
+  .product-item {
+    margin-bottom: 6px !important;
+  }
+  
+  .action-btn-container {
+    padding: 0px 45px !important;
+  }
+
+  .more-options {
+    padding: 1px !important;
+  }
+
+  .more-options svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+
+}
+
+/* REMOVED - Let tablets use same blue outlines as mobile portrait */
+
+/* REMOVED - Let tablets inherit mobile portrait styles exactly */
+
+
+

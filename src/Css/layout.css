@@ -1,0 +1,54 @@
+/* Layout containers - Mobile First */
+.layout-root { 
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+  padding-top: 60px; /* Account for fixed header */
+  background: #f8f9fa; /* Match content area background */
+}
+
+.layout-body { 
+  flex: 1; 
+  display: flex; 
+  background: #f8f9fa; /* Ensure consistent background */
+}
+
+.sidebar-wrapper {
+  display: none; /* Hidden on mobile by default */
+}
+
+.content-area { 
+  flex: 1; 
+  padding: 20px 16px; 
+  position: relative; 
+  background: #f8f9fa;
+  min-height: calc(100vh - 60px);
+}
+
+.page-title { 
+  font-size: 20px; 
+  font-weight: 400; 
+  margin: 0 0 16px; 
+  color: #333;
+}
+
+/* Desktop layout - Show sidebar on laptops and larger screens */
+@media (min-width: 901px) {
+  .sidebar-wrapper {
+    display: block;
+    flex-shrink: 0;
+  }
+  
+  .layout-body {
+    flex-direction: row;
+  }
+  
+  .content-area {
+    padding: 24px 32px;
+    overflow-y: auto;
+  }
+  
+  .layout-root {
+    overflow: hidden; /* Prevent double scrollbars */
+  }
+}

@@ -1,0 +1,106 @@
+/* Header bar - Mobile First Design */
+header.header { 
+  height: 60px; 
+  background: #0066cc; 
+  display: flex; 
+  align-items: center; 
+  padding: 0 16px; 
+  color: #fff; 
+  font-weight: 400; 
+  justify-content: space-between; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Header Left Section */
+header.header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 8px; /* Move hamburger button more to the left */
+}
+
+header.header .hamburger { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 4px; 
+  background: transparent; 
+  border: none; 
+  padding: 8px 10px; 
+  cursor: pointer; 
+}
+
+header.header .hamburger span { 
+  width: 22px; 
+  height: 3px; 
+  background: #fff; 
+  border-radius: 2px; 
+  display: block; 
+}
+
+/* User Info Section */
+header.header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header.header .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+header.header .user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+header.header .user-name-text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+header.header .company-name-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Header Right Section */
+header.header .header-right {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Move language selector to the left */
+}
+
+header.header .lang-selector { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+}
+
+header.header .lang-text { 
+  color: #fff; 
+  font-size: 14px; 
+  font-weight: 400; 
+}
+
+header.header .lang-flag { 
+  width: 28px; 
+  height: 20px; 
+  cursor: pointer; 
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
