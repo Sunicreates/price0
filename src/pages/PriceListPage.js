@@ -14,7 +14,7 @@ export default function PriceListPage() {
   const [debouncedSearchProduct, setDebouncedSearchProduct] = useState('');
 
   const isOnline = useNetworkStatus();
-  const { products, loading, error, loadProducts, updateProduct, createProduct } = useProducts();
+  const { products, setProducts, loading, error, loadProducts, updateProduct, createProduct } = useProducts();
 
 
   useEffect(() => {
@@ -29,9 +29,13 @@ export default function PriceListPage() {
     return () => clearTimeout(timer);
   }, [searchArticle, searchProduct]);
 
-  const handleChange = useCallback(() => {
-   
-  }, []);
+  const handleChange = useCallback((id, field, value) => {
+    setProducts(prevProducts =>
+      prevProducts.map(product =>
+        product.id === id ? { ...product, [field]: value } : product
+      )
+    );
+  }, [setProducts]);
 
   const handleBlur = useCallback(async (id, product) => {
     await updateProduct(id, product);
@@ -51,12 +55,13 @@ export default function PriceListPage() {
       };
 
       await createProduct(blankProduct);
+      await loadProducts(); // Refresh the list to include the new product
     } catch (err) {
       console.error('Failed to create product', err);
     } finally {
       setCreating(false);
     }
-  }, [createProduct]);
+  }, [createProduct, loadProducts]);
 
   const filtered = useMemo(() => products.filter(p =>
     (p.article_no || '').toLowerCase().includes(debouncedSearchArticle.toLowerCase()) &&

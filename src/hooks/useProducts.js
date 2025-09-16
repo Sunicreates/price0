@@ -1,5 +1,7 @@
 import { useState, useCallback } from 'react';
 
+const API_BASE = process.env.REACT_APP_API_BASE || 'https://price-list-m9of.onrender.com';
+
 export const useProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +18,7 @@ export const useProducts = () => {
     setError(null);
 
     try {
-      const response = await fetch('https://price-list-m9of.onrender.com/products');
+      const response = await fetch(`${API_BASE}/products`);
       if (!response.ok) throw new Error('Failed to fetch products');
 
       const data = await response.json();
@@ -32,7 +34,7 @@ export const useProducts = () => {
 
   const updateProduct = useCallback(async (id, product) => {
     try {
-      const response = await fetch(`https://price-list-m9of.onrender.com/${id}`, {
+      const response = await fetch(`${API_BASE}/products/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(product),
@@ -48,7 +50,7 @@ export const useProducts = () => {
 
   const createProduct = useCallback(async (productData) => {
     try {
-      const response = await fetch('https://price-list-m9of.onrender.com/products', {
+      const response = await fetch(`${API_BASE}/products`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(productData)
@@ -66,6 +68,7 @@ export const useProducts = () => {
 
   return {
     products,
+    setProducts,
     loading,
     error,
     loadProducts,
